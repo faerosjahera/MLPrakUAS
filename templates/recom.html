@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>See Your Food Recommendation</title>
+     <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                        <span class="icon icon-bar"></span>
+                    </button>
+                
+                   <!-- LOGO IMAGE & TEXT HERE -->
+                   <a href="/" class="navbar-brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo"> KangMasak
+                </a>
+            </div>
+                
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="/" class="smoothScroll">Home</a></li>
+                         <li><a href="/" class="smoothScroll">About Us</a></li>
+                         <li><a href="/" class="smoothScroll">News</a></li>
+                         <li class="appointment-btn"><a href="/">Find Your Dish!</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+
+     <!-- NEWS DETAIL -->
+<section id="recommendation" style="background-color: #f9f9f9; padding: 40px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h2 class="text-center" style="margin-bottom: 40px; color: #333;">Rekomendasi Makanan Untukmu !</h2>
+                <div id="recommendation-results">
+                    {% if recommendations %}
+                        <div class="row">
+                            {% for item in recommendations %}
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="recommendation-box" style="border: 1px solid #e6a5a5; border-radius: 10px; padding: 20px; margin-bottom: 20px; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                        <h3 style="font-size: 1.3em; color: #007bff; margin-bottom: 10px; text-align: center;">
+                                            {{ item['Name'] }}
+                                        </h3>
+                                        <p><strong>Kategori:</strong> {{ item['C_Type'] }}</p>
+                                        <p><strong>Tipe:</strong> {{ item['Veg_Non'] }}</p>
+                                        <p><strong>Food ID:</strong> {{ item['Food_ID'] }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p style="color: red; font-weight: 700; text-align: center;">Input tidak lengkap. Mohon pilih preferensi makanan.</p>
+                    {% endif %}
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/" class="section-btn btn btn-default smoothScroll" style="display: inline-block;">See Another Recommendation</a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     
+         
+
+
+       <!-- FOOTER -->
+       <footer data-stellar-background-ratio="5">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-4 col-sm-4">
+                       <div class="footer-thumb"> 
+                           <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                           <p>For inquiries about our food recommendations or to get the best dining suggestions, feel free to reach out. We're here to help you discover your next great meal!</p>
+                   
+                           <div class="contact-info">
+                               <p><i class="fa fa-phone"></i> (031) 5914043</p>
+                               <p><i class="fa fa-envelope-o"></i> <a href="mailto:info@kangmasak.com">info@kangmasak.com</a></p>
+                           </div>
+                       </div>
+                   </div>
+                   
+
+                  <div class="col-md-4 col-sm-4"> 
+                       <div class="footer-thumb"> 
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
+                            <div class="latest-stories">
+                                 <div class="stories-image">
+                                  <a href="#"><img src="{{ url_for('static', filename='images/news-image2.jpg') }}" class="img-responsive" alt=""></a>
+                              </div>
+                                 <div class="stories-info">
+                                  <a href="#"><h5>Culinary</h5></a>
+                                  <span>December 01, 2024</span>
+                                 </div>
+                            </div>
+
+                            <div class="latest-stories">
+                                 <div class="stories-image">
+                                      <a href="#"><img src="{{ url_for('static', filename='images/news-image1.jpg') }}" class="img-responsive" alt=""></'>
+                                 </div>
+                                 <div class="stories-info">
+                                      <a href="#"><h5>Tips n Trick</h5>>
+                                      <span>December 05, 2024</span>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-4"> 
+                       <div class="footer-thumb">
+                            <div class="opening-hours">
+                                 <h4 class="wow fadeInUp" data-wow-delay="0.4s">Available Anytime</h4>
+                                 <p>Access food recommendations and discover the best dining options whenever you need!</p>
+                             </div>
+                             
+                             
+
+                            <ul class="social-icon">
+                              <li><a href="https://www.facebook.com/tooplate" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                              <li><a href="https://x.com/home" class="fa fa-twitter"></a></li>
+                              <li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
+                         </ul>
+                       </div>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 border-top">
+                       <div class="col-md-4 col-sm-6">
+                            <div class="copyright-text"> 
+                                 <p>Copyright &copy; 2024 Fairuz Zahira
+                                 
+                                 | Lintang Sekar Wangi</p>
+                            </div>
+                       </div>
+                       <div class="col-md-6 col-sm-6">
+                       </div>
+                       <div class="col-md-2 col-sm-2 text-align-center">
+                            <div class="angle-up-btn"> 
+                              <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                          </div>
+                       </div>   
+                  </div>
+                  
+             </div>
+        </div>
+   </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+</html>

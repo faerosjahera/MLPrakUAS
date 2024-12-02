@@ -67,9 +67,31 @@
 
 
      <!-- NEWS DETAIL -->
-     <section>
-          
-     </section>
+<section id="recommendation">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <h2 class="text-center">Hasil Rekomendasi</h2>
+                    <div id="recommendation-results">
+                         {% if recommendations %}
+                              <ul>
+                                   {% for food in recommendations %}
+                                        <li>
+                                             <h4>{{ food.Name }}</h4>
+                                             <p>Kategori: {{ food.C_Type }}</p>
+                                             <p>Tipe: {{ food.Veg_Non }}</p>
+                                        </li>
+                                   {% endfor %}
+                              </ul>
+                         {% else %}
+                              <p class="text-center">Input tidak lengkap. Mohon pilih preferensi makanan.</p>
+                         {% endif %}
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+
          
 
 

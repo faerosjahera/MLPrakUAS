@@ -32,27 +32,6 @@
           </div>
      </section>
 
-
-     <!-- HEADER -->
-     <!-- <header>
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-5">
-                         <p>Welcome to Specialist Food Recommendation</p>
-                    </div>
-                         
-                    <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i> (031) 5914043</span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 7:00 AM - 10:00 PM (Mon-Sat)</span>
-                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/?pli=1">cerebri@cerebricare.com</a></span>
-                    </div>
-
-               </div>
-          </div>
-     </header> -->
-
-
      <!-- MENU -->
      <section class="navbar navbar-default navbar-static-top" role="navigation">
           <div class="container">
@@ -154,10 +133,6 @@
                </div>
           </div>
      </section>
-
-
-     <!-- TEAM -->
-     <!-- <section id="team" data-stellar-background-ratio="1">
           <div class="container">
                <div class="row">
 
@@ -231,7 +206,7 @@
                     
                </div>
           </div>
-     </section> -->
+     </section> 
 
 
      <!-- NEWS -->
@@ -326,7 +301,7 @@
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
+                         <form id="appointment-form" role="form" method="post" action="/result">
 
                               <!-- SECTION TITLE -->
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
@@ -335,26 +310,85 @@
 
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
                                    <div class="col-md-12 col-sm-12">
-                                        <label for="select">Apa preferensi makanan Anda sekarang?</label>
-                                        <select class="form-control">
-                                             <option>Healthy Food</option>
-                                             <option>Snack</option>
-                                             <option>Dessert</option>
-                                             <option>Japanese</option>
-                                             <option>Indian</option>
-                                             <option>French</option>
-                                             <option>Mexican</option>
-                                             <option>Italian</option>
-                                             <option>Chinese</option>
-                                             <option>Beverage </option>
-                                             <option>Thai</option>
-                                             <option>Korean</option>
-                                             <option>Vietnames</option>
-                                             <option>Nepalesh</option>
-                                             <option>Spanish</option>
-                                        </select>
-                                   </div>
-
+                                        <label for="foodPreferences">Apa preferensi makanan Anda sekarang?</label><br>
+                                        
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="healthyFood" name="foodPreferences" value="Healthy Food">
+                                                <label for="healthyFood">Healthy Food</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="snack" name="foodPreferences" value="Snack">
+                                                <label for="snack">Snack</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="dessert" name="foodPreferences" value="Dessert">
+                                                <label for="dessert">Dessert</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="japanese" name="foodPreferences" value="Japanese">
+                                                <label for="japanese">Japanese</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="indian" name="foodPreferences" value="Indian">
+                                                <label for="indian">Indian</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="french" name="foodPreferences" value="French">
+                                                <label for="french">French</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="mexican" name="foodPreferences" value="Mexican">
+                                                <label for="mexican">Mexican</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="italian" name="foodPreferences" value="Italian">
+                                                <label for="italian">Italian</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="chinese" name="foodPreferences" value="Chinese">
+                                                <label for="chinese">Chinese</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="beverage" name="foodPreferences" value="Beverage">
+                                                <label for="beverage">Beverage</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="thai" name="foodPreferences" value="Thai">
+                                                <label for="thai">Thai</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="korean" name="foodPreferences" value="Korean">
+                                                <label for="korean">Korean</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="checkbox-group">
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="vietnamese" name="foodPreferences" value="Vietnamese">
+                                                <label for="vietnamese">Vietnamese</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="nepali" name="foodPreferences" value="Nepali">
+                                                <label for="nepali">Nepali</label>
+                                            </div>
+                                            <div class="checkbox-item">
+                                                <input type="checkbox" id="spanish" name="foodPreferences" value="Spanish">
+                                                <label for="spanish">Spanish</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                          
                                    <div class="col-md-12 col-sm-12">
                                         <label for="select">Apakah Anda ingin makanan vegetarian atau non-vegetarian?</label>
                                         <select class="form-control">
@@ -446,12 +480,6 @@
                               </div>
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <!-- <div class="footer-link"> 
-                                   <a href="#">Laboratory Tests</a>
-                                   <a href="#">Departments</a>
-                                   <a href="#">Insurance Policy</a>
-                                   <a href="#">Careers</a>
-                              </div> -->
                          </div>
                          <div class="col-md-2 col-sm-2 text-align-center">
                               <div class="angle-up-btn"> 
